@@ -36,7 +36,7 @@ SELECT subscription_status,
 --Q6. Which 5 products have the highest percentage of purchases with discounts applied?
 
 SELECT item_purchased,
-ROUND(100 * SUM( CASE WHEN discount_applied='Yes' then 1 else 0 end)/COUNT(*),2) AS discount_rate
+ROUND(100 * SUM( CASE WHEN discount_applied='Yes' then 1 else 0 end)::numeric/COUNT(*),2) AS discount_rate
 FROM customer
 group by item_purchased
 order by discount_rate desc
