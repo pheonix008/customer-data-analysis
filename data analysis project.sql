@@ -31,7 +31,7 @@ SELECT subscription_status,
  ROUND(SUM(purchase_amount),2) as total_revenue
  FROM customer
  group by subscription_status
- order by total_revenue, avg_spend desc
+ order by total_revenue desc, avg_spend desc
 
 --Q6. Which 5 products have the highest percentage of purchases with discounts applied?
 
